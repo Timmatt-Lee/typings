@@ -57,7 +57,7 @@ available themes:
 
 ## language
 
-type the language code for example `german` in the text box then hit [ windows: <kbd>alt</kbd> + <kbd>l</kbd> ], [ mac: <kbd>cmd</kbd> + <kbd>ctrl</kbd> + <kbd>l</kbd> ], [ linux: <kbd>super</kbd> + <kbd>ctrl</kbd> + <kbd>l</kbd> or <kbd>alt</kbd> + <kbd>l</kbd> ]
+type the language code for example `german` in the text box then hit [ windows: <kbd>alt</kbd> + <kbd>l</kbd> ], [ mac: <kbd>option</kbd> + <kbd>ctrl</kbd> + <kbd>l</kbd> ], [ linux: <kbd>super</kbd> + <kbd>ctrl</kbd> + <kbd>l</kbd> or <kbd>alt</kbd> + <kbd>l</kbd> ]
 
 available languages:
 
