@@ -88,7 +88,7 @@ function showResult() {
     acc;
   switch (typingMode) {
     case 'wordcount': {
-      words = correctKeys / 5;
+      words = correctKeys / (currentLang === '繁體中文' ? 1 : 5);
       minute = (Date.now() - startDate) / 1000 / 60;
       let totalKeys = -1;
       wordList.forEach((e) => { totalKeys += e.length + 1; });
