@@ -246,20 +246,42 @@ inputField.addEventListener('keydown', (e) => {
 
       // If it is not the last word increment currentWord,
       if (currentWord < wordList.length - 1) {
-        if (inputField.value === wordList[currentWord]) {
-          textDisplay.childNodes[currentWord].classList.add('correct');
-          correctKeys += wordList[currentWord].length + 1;
+        if (currentLang === '繁體中文') {
+          while (inputField.value.length >= wordList[currentWord].length) {
+            const sliceInputValue = inputField.value.slice(0, wordList[currentWord].length);
+            if (sliceInputValue === wordList[currentWord]) {
+              textDisplay.childNodes[currentWord].classList.add('correct');
+              correctKeys += wordList[currentWord].length + 1;
+            } else {
+              textDisplay.childNodes[currentWord].classList.add('wrong');
+            }
+            textDisplay.childNodes[currentWord + 1].classList.add('highlight');
+            inputField.value = inputField.value.slice(wordList[currentWord].length);
+            currentWord += 1;
+
+            if (currentWord === wordList.length - 1) {
+              showResult();
+              currentWord += 1;
+            }
+          }
         } else {
-          textDisplay.childNodes[currentWord].classList.add('wrong');
+          if (inputField.value === wordList[currentWord]) {
+            textDisplay.childNodes[currentWord].classList.add('correct');
+            correctKeys += wordList[currentWord].length + 1;
+          } else {
+            textDisplay.childNodes[currentWord].classList.add('wrong');
+          }
+          textDisplay.childNodes[currentWord + 1].classList.add('highlight');
+          inputField.value = inputField.value.slice(wordList[currentWord].length);
+          currentWord += 1;
         }
-        textDisplay.childNodes[currentWord + 1].classList.add('highlight');
       } else if (currentWord === wordList.length - 1) {
         textDisplay.childNodes[currentWord].classList.add('wrong');
         showResult();
+        currentWord += 1;
       }
 
       setTimeout(() => { inputField.value = ''; }, 0);
-      currentWord += 1;
     }
 
     // Else if it is the last word and input word is correct show the result
